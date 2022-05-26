@@ -1,10 +1,13 @@
-import { Text, Flex } from "@chakra-ui/react";
-// needs to be worked on so its at the bottom of the page && mobile responsive
-const Footer = (props) => {
-    return (
-        <Flex alignSelf="bottom" alignItems="bottom" justifyContent="center">
-            <Text>Designed and Built by Alex Mao!</Text>
-        </Flex>
+import { Text, useColorMode } from '@chakra-ui/react'
+
+
+const Footer = () => {
+    const colorModeText = useColorMode("brand.200", "brand.400")
+
+    return(
+            <Text fontSize="sm" color={ colorModeText }>
+                Designed and Developed by Alexander Mao
+            </Text>
     )
 }
 

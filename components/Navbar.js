@@ -4,11 +4,15 @@ import { useState } from 'react'
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 const MenuItem = ({ children, isLast, to='/' }) => {
+    const colorModeMenuItem = useColorModeValue("brand.500", "brand.100")
     return (
         <Text
         mb={{ base: isLast ? 0:8, sm: 0}}
         mr={{ base: 0, sm: isLast ? 0:8 }}
-        display="block">
+        display="block"
+        color={ colorModeMenuItem }
+        fontWeight="bold"
+        /*fontFamily={"Abel" | "sans-serif"}*/>
             <Link href={to}>{children}</Link>
         </Text>
     )
@@ -18,7 +22,9 @@ const Header = (props) => {
     const [show, setShow] = useState(false)
     const toggleMenu = () => setShow(!show)
     const { toggleColorMode } = useColorMode()
-    const colorModeButton = useColorModeValue(<SunIcon/>, <MoonIcon/>)
+    const colorModeButtonIcon = useColorModeValue(<MoonIcon/>, <SunIcon/>)
+    const colorModeText = useColorModeValue("brand.500", "brand.100")
+
 
     return(
         <Flex
@@ -32,9 +38,9 @@ const Header = (props) => {
     >
         {/* change to button w/ logo */}
       <Box w="200px">
-        <Text fontSize="lg" fontWeight="bold">
-          ALEX MAO
-        </Text>
+       <Text fontWeight="bold" display="block" color={ colorModeText }>
+        <Link href="/">AM</Link>
+       </Text>
       </Box>
 
       <Box display={{ base: 'block', md: 'none' }} onClick={toggleMenu}>
@@ -51,13 +57,11 @@ const Header = (props) => {
           direction={['column', 'row', 'row', 'row']}
           pt={[4, 4, 0, 0]}
         >
-            {/* remove home menu item */}
-          <MenuItem to="/">HOME</MenuItem>
           <MenuItem to="/about">ABOUT</MenuItem>
           <MenuItem to="/projects">PROJECTS</MenuItem>
           <MenuItem to="/resume">RESUME</MenuItem>
           <MenuItem to="/contact">CONTACT</MenuItem>
-          <MenuItem isLast><IconButton onClick={ toggleColorMode } icon={ colorModeButton }/></MenuItem>
+          <MenuItem isLast><IconButton onClick={ toggleColorMode } icon={ colorModeButtonIcon } bg="transparent"/></MenuItem>
         </Flex>
       </Box>
     </Flex>
