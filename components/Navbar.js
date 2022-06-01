@@ -4,13 +4,11 @@ import { useState } from 'react'
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 const MenuItem = ({ children, isLast, to='/' }) => {
-    const colorModeMenuItem = useColorModeValue("brand.500", "brand.100")
     return (
         <Text
         mb={{ base: isLast ? 0:8, sm: 0}}
         mr={{ base: 0, sm: isLast ? 0:8 }}
         display="block"
-        color={ colorModeMenuItem }
         fontWeight="bold"
         /*fontFamily={"Abel" | "sans-serif"}*/>
             <Link href={to}>{children}</Link>
@@ -23,9 +21,7 @@ const Header = (props) => {
     const toggleMenu = () => setShow(!show)
     const { toggleColorMode } = useColorMode()
     const colorModeButtonIcon = useColorModeValue(<MoonIcon/>, <SunIcon/>)
-    const colorModeText = useColorModeValue("brand.500", "brand.100")
-
-
+    
     return(
         <Flex
       mb={8}
@@ -38,7 +34,7 @@ const Header = (props) => {
     >
         {/* change to button w/ logo */}
       <Box w="200px">
-       <Text fontWeight="bold" display="block" color={ colorModeText }>
+       <Text fontWeight="bold" display="block">
         <Link href="/">AM</Link>
        </Text>
       </Box>
@@ -59,9 +55,10 @@ const Header = (props) => {
         >
           <MenuItem to="/about">ABOUT</MenuItem>
           <MenuItem to="/projects">PROJECTS</MenuItem>
-          <MenuItem to="/resume">RESUME</MenuItem>
-          <MenuItem to="/contact">CONTACT</MenuItem>
-          <MenuItem isLast><IconButton onClick={ toggleColorMode } icon={ colorModeButtonIcon } bg="transparent"/></MenuItem>
+          <MenuItem to="/resume">WORK</MenuItem>
+          <MenuItem to="/contact" isLast>CONTACT</MenuItem>
+          {/* <MenuItem isLast></MenuItem> */}
+          <IconButton onClick={ toggleColorMode } icon={ colorModeButtonIcon } bg="transparent" ml="5vh"/>
         </Flex>
       </Box>
     </Flex>
