@@ -2,7 +2,7 @@ import { Box, Badge, Image, IconButton, useColorModeValue } from "@chakra-ui/rea
 import { FaGithub, FaLink } from "react-icons/fa"
 import Link from "next/link"
 
-function ProjectCard({imageUrl, imageAlt, title}) {
+function ProjectCard({imageUrl, imageAlt, title, githubLink, link}) {
     const colorModeBorder = useColorModeValue("brand.400", "brand.200")
     const colorModeButton = useColorModeValue("brand.200", "brand.400")
   
@@ -22,8 +22,8 @@ function ProjectCard({imageUrl, imageAlt, title}) {
             {title}
           </Box>
           <Box display='flex' mt='2' alignItems='center'>
-            <Link href="https://github.com/alexxmao/todo-list-app" passHref={false}><IconButton mr="5vh" my="1vh" icon={<FaGithub/>} bg={ colorModeButton } isRound /></Link>
-            <Link href="https://todo-list-app-kohl.vercel.app/" passHref={false}><IconButton icon={<FaLink/>} bg={ colorModeButton } isRound /></Link>
+            <Link href={githubLink} passHref={false}><IconButton mr="5vh" my="1vh" icon={<FaGithub/>} bg={ colorModeButton } isRound /></Link>
+            <Link href={link} passHref={false}><IconButton icon={<FaLink/>} bg={ colorModeButton } isRound /></Link>
           </Box>
         </Box>
       </Box>
