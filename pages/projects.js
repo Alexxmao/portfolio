@@ -7,15 +7,12 @@ export default function Projects(){
             <Heading py="5vh">Projects:</Heading>
             <Stack direction="row">
                 <ProjectCard imageUrl='images/todolist.jpg' imageAlt='todo list screenshot' title='Todo List'/>
-                <ProjectCard imageUrl='images/todolist.jpg' imageAlt='todo list screenshot' title='Todo List'/>
-                <ProjectCard imageUrl='images/todolist.jpg' imageAlt='todo list screenshot' title='Todo List'/>
-                <ProjectCard imageUrl='images/todolist.jpg' imageAlt='todo list screenshot' title='Todo List'/>
             </Stack>
             <Stack direction="row">
+                {/* <ProjectCard imageUrl='images/todolist.jpg' imageAlt='todo list screenshot' title='Todo List'/>
                 <ProjectCard imageUrl='images/todolist.jpg' imageAlt='todo list screenshot' title='Todo List'/>
                 <ProjectCard imageUrl='images/todolist.jpg' imageAlt='todo list screenshot' title='Todo List'/>
-                <ProjectCard imageUrl='images/todolist.jpg' imageAlt='todo list screenshot' title='Todo List'/>
-                <ProjectCard imageUrl='images/todolist.jpg' imageAlt='todo list screenshot' title='Todo List'/>
+                <ProjectCard imageUrl='images/todolist.jpg' imageAlt='todo list screenshot' title='Todo List'/> */}
             </Stack>
         </Stack>
     )

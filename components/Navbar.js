@@ -55,7 +55,7 @@ const Header = (props) => {
         >
           <MenuItem to="/about">ABOUT</MenuItem>
           <MenuItem to="/projects">PROJECTS</MenuItem>
-          <MenuItem to="/resume">WORK</MenuItem>
+          {/* <MenuItem to="/work">WORK</MenuItem> */}
           <MenuItem to="/contact" isLast>CONTACT</MenuItem>
           {/* <MenuItem isLast></MenuItem> */}
           <IconButton onClick={ toggleColorMode } icon={ colorModeButtonIcon } bg="transparent" ml="5vh"/>
